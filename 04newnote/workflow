@@ -1,0 +1,18 @@
+title Post FORM data to Server
+
+browser->server:HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over browser:
+In the browser FORM input "post from china"
+press SAVE button
+end note
+server->browser:Response status code:302 Location:/exampleapp/notes
+browser->server:HTTP POST https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser:HTML-code
+browser->server:HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser:main.css
+browser->server:HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server->browser:mian.js
+browser->browser:Browser starts executing js-code \nrequests JSON data from server
+browser->server:HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser:data.json
+browser->browser:Browser execute event handler \n that renders notes to display

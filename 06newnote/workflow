@@ -1,0 +1,15 @@
+title New Note With SPA
+
+note over browser:
+In the browser FORM type "Post From China"
+press SAVE button
+end note
+browser->browser:Javascript prevent the default\n handling of form submit\n use jscode add note to the list\n then render Note list
+browser->server:HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over browser:
+{
+  "content": "Post From China",
+  "date": "2021-11-25T07:32:59.620Z"
+}
+end note
+server->browser:Response 201 {"message":"note created"}
